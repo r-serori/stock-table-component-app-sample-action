@@ -1,23 +1,24 @@
+import React, { useState } from "react";
+
 const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    onSearch(searchTerm);
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setSearchTerm(value);
+    onSearch(value); // 入力ごとに親コンポーネントの検索処理を呼び出す
   };
 
   return (
-    <form onSubmit={handleSearch} className="search-container">
+    <div className="search-container">
+      <label>商品名</label>
       <input
         type="text"
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={handleChange}
         placeholder="商品を検索"
       />
-      <button type="submit" className="search-button">
-        検索
-      </button>
-    </form>
+    </div>
   );
 };
 

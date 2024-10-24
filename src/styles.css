@@ -54,7 +54,7 @@ button:hover {
 /* 検索バーとボタンの配置 */
 .search-container {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -72,7 +72,7 @@ input[type="text"] {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  margin-top: 200px;
+  margin-top: 120px;
 }
 
 .top-bar .add-button {
